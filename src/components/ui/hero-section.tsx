@@ -1,8 +1,8 @@
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ChevronDown, Download, Mail, Github } from 'lucide-react';
-import heroImage from '@/assets/hero-bg.jpg';
-import profilePhoto from '@/assets/profile-photo.jpg';
+import techBg from '@/assets/tech-bg.jpg';
+import profilePhoto from '@/assets/profile-photo-new.jpg';
 
 const HeroSection = () => {
   const scrollToAbout = () => {
@@ -14,18 +14,19 @@ const HeroSection = () => {
       id="home" 
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
       style={{
-        backgroundImage: `url(${heroImage})`,
+        backgroundImage: `url(${techBg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
       }}
     >
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/70 to-background/90" />
+      {/* Enhanced Overlay for tech aesthetic */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/85 to-background/95" />
       
-      {/* Floating elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-xl animate-float" />
-      <div className="absolute bottom-20 right-10 w-24 h-24 bg-accent/10 rounded-full blur-xl animate-float" style={{ animationDelay: '2s' }} />
+      {/* Floating tech elements with enhanced glow */}
+      <div className="absolute top-20 left-10 w-32 h-32 bg-primary/20 rounded-full blur-xl animate-float animate-pulse-glow" />
+      <div className="absolute bottom-20 right-10 w-24 h-24 bg-accent/20 rounded-full blur-xl animate-float animate-pulse-glow" style={{ animationDelay: '2s' }} />
+      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-accent/15 rounded-full blur-lg animate-float animate-pulse-glow" style={{ animationDelay: '4s' }} />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -49,57 +50,58 @@ const HeroSection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-              <Button size="lg" className="shadow-glow animate-glow">
-                <Mail className="mr-2 h-5 w-5" />
+              <Button variant="glow" size="xl" className="animate-intense-glow">
+                <Mail className="mr-2 h-5 w-5 glow-icon" />
                 Get In Touch
               </Button>
-              <Button variant="outline" size="lg">
-                <Download className="mr-2 h-5 w-5" />
+              <Button variant="glow-outline" size="xl">
+                <Download className="mr-2 h-5 w-5 glow-icon" />
                 Download Resume
               </Button>
-              <Button variant="ghost" size="lg">
-                <Github className="mr-2 h-5 w-5" />
+              <Button variant="tech" size="xl">
+                <Github className="mr-2 h-5 w-5 glow-icon" />
                 View Projects
               </Button>
             </div>
             
-            {/* Tech Stack Tags */}
+            {/* Tech Stack Tags with glow */}
             <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
               {['Python', 'Machine Learning', 'AI', 'Java', 'React', 'Data Analysis'].map((tech) => (
-                <Badge key={tech} variant="outline" className="text-sm">
+                <Badge key={tech} variant="outline" className="text-sm glow-button animate-pulse-glow hover:shadow-glow-intense">
                   {tech}
                 </Badge>
               ))}
             </div>
           </div>
           
-          {/* Profile Image */}
+          {/* Enhanced Profile Image with tech glow */}
           <div className="flex justify-center lg:justify-end animate-fade-in">
             <div className="relative">
-              <div className="w-80 h-80 rounded-full overflow-hidden shadow-large border-4 border-primary/20">
+              <div className="w-80 h-80 rounded-full overflow-hidden shadow-glow-intense border-4 border-primary/30 animate-intense-glow">
                 <img
                   src={profilePhoto}
-                  alt="K.Ameer Malik Bahad"
+                  alt="K.Ameer Malik Bahad - AI & Data Science Engineer"
                   className="w-full h-full object-cover"
                 />
               </div>
-              {/* Decorative ring */}
-              <div className="absolute inset-0 rounded-full border-2 border-accent/30 animate-pulse" />
-              <div className="absolute -inset-4 rounded-full border border-primary/20 animate-pulse" style={{ animationDelay: '1s' }} />
+              {/* Enhanced decorative rings with glow */}
+              <div className="absolute inset-0 rounded-full border-2 border-accent/50 animate-pulse-glow" />
+              <div className="absolute -inset-4 rounded-full border border-primary/30 animate-pulse-glow" style={{ animationDelay: '1s' }} />
+              <div className="absolute -inset-8 rounded-full border border-accent/20 animate-pulse-glow" style={{ animationDelay: '2s' }} />
             </div>
           </div>
         </div>
         
-        {/* Scroll indicator */}
+        {/* Enhanced scroll indicator with glow */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <Button
-            variant="ghost"
+            variant="glow-outline"
             size="sm"
             onClick={scrollToAbout}
-            className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary"
+            className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary animate-pulse-glow"
           >
             <span className="text-sm">Scroll to explore</span>
-            <ChevronDown className="h-5 w-5" />
+            <ChevronDown className="h-5 w-5 glow-icon" />
           </Button>
         </div>
       </div>

@@ -11,6 +11,7 @@ import {
   Calendar,
   Star
 } from 'lucide-react';
+import aiPattern from '@/assets/ai-pattern.jpg';
 
 const ProjectsSection = () => {
   const projects = [
@@ -89,11 +90,23 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+    <section 
+      id="projects" 
+      className="py-20 relative overflow-hidden"
+      style={{
+        backgroundImage: `url(${aiPattern})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      {/* Enhanced overlay for readability */}
+      <div className="absolute inset-0 bg-background/90" />
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Enhanced Section Header */}
         <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4">
+          <Badge variant="outline" className="mb-4 glow-button animate-pulse-glow">
             Featured Work
           </Badge>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 font-space">
@@ -108,21 +121,21 @@ const ProjectsSection = () => {
         {/* Featured Projects */}
         <div className="mb-16">
           <h3 className="text-2xl font-bold mb-8 font-space flex items-center">
-            <Star className="h-6 w-6 text-accent mr-2" />
+            <Star className="h-6 w-6 text-accent mr-2 glow-icon animate-icon-glow" />
             Featured Projects
           </h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {projects.filter(project => project.featured).map((project, index) => (
               <Card 
                 key={index}
-                className="bg-gradient-card border-primary/20 hover:shadow-large transition-all duration-300 group overflow-hidden animate-slide-up"
+                className="bg-gradient-card border-primary/30 project-glow animate-slide-up group overflow-hidden"
               >
                 {/* Project Header with Icon */}
                 <div className={`h-32 bg-${project.image} relative overflow-hidden`}>
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20" />
                   <div className="absolute top-4 left-4">
-                    <div className="p-3 bg-white/10 backdrop-blur-sm rounded-lg">
-                      <project.icon className="h-8 w-8 text-white" />
+                    <div className="p-3 bg-white/10 backdrop-blur-sm rounded-lg glow-button animate-pulse-glow">
+                      <project.icon className="h-8 w-8 text-white glow-icon" />
                     </div>
                   </div>
                   <div className="absolute top-4 right-4">
@@ -150,7 +163,7 @@ const ProjectsSection = () => {
                     <h5 className="font-semibold mb-2">Technologies Used</h5>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech) => (
-                        <Badge key={tech} variant="outline" className="text-xs">
+                        <Badge key={tech} variant="outline" className="text-xs glow-button animate-pulse-glow">
                           {tech}
                         </Badge>
                       ))}
@@ -172,12 +185,12 @@ const ProjectsSection = () => {
 
                   {/* Action Buttons */}
                   <div className="flex space-x-3 pt-4">
-                    <Button size="sm" className="flex-1">
-                      <ExternalLink className="h-4 w-4 mr-2" />
+                    <Button variant="glow" size="sm" className="flex-1">
+                      <ExternalLink className="h-4 w-4 mr-2 glow-icon" />
                       Live Demo
                     </Button>
-                    <Button variant="outline" size="sm">
-                      <Github className="h-4 w-4" />
+                    <Button variant="glow-outline" size="sm">
+                      <Github className="h-4 w-4 glow-icon" />
                     </Button>
                   </div>
                 </CardContent>
@@ -193,12 +206,12 @@ const ProjectsSection = () => {
             {projects.filter(project => !project.featured).map((project, index) => (
               <Card 
                 key={index}
-                className="bg-gradient-card border-primary/20 hover:shadow-medium transition-all duration-300 group animate-fade-in"
+                className="bg-gradient-card border-primary/30 project-glow group animate-fade-in"
               >
                 <CardHeader className="pb-4">
                   <div className="flex items-start space-x-4">
-                    <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                      <project.icon className="h-6 w-6 text-primary" />
+                    <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors glow-button">
+                      <project.icon className="h-6 w-6 text-primary glow-icon" />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
@@ -212,7 +225,7 @@ const ProjectsSection = () => {
                       {/* Technologies */}
                       <div className="flex flex-wrap gap-1 mb-4">
                         {project.technologies.slice(0, 4).map((tech) => (
-                          <Badge key={tech} variant="secondary" className="text-xs">
+                          <Badge key={tech} variant="secondary" className="text-xs glow-button animate-pulse-glow">
                             {tech}
                           </Badge>
                         ))}
@@ -220,12 +233,12 @@ const ProjectsSection = () => {
                       
                       {/* Actions */}
                       <div className="flex space-x-2">
-                        <Button variant="outline" size="sm" className="text-xs">
-                          <Github className="h-3 w-3 mr-1" />
+                        <Button variant="glow-outline" size="sm" className="text-xs">
+                          <Github className="h-3 w-3 mr-1 glow-icon" />
                           Code
                         </Button>
-                        <Button variant="outline" size="sm" className="text-xs">
-                          <ExternalLink className="h-3 w-3 mr-1" />
+                        <Button variant="glow-outline" size="sm" className="text-xs">
+                          <ExternalLink className="h-3 w-3 mr-1 glow-icon" />
                           Demo
                         </Button>
                       </div>
@@ -237,16 +250,16 @@ const ProjectsSection = () => {
           </div>
         </div>
 
-        {/* Call to Action */}
+        {/* Enhanced Call to Action */}
         <div className="text-center mt-16">
-          <Card className="bg-gradient-hero text-white border-none inline-block">
+          <Card className="bg-gradient-hero text-white border-none inline-block project-glow animate-intense-glow">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-4 font-space">Want to see more?</h3>
               <p className="mb-6 opacity-90">
                 Check out my GitHub for additional projects and contributions to open source.
               </p>
-              <Button variant="secondary" size="lg">
-                <Github className="h-5 w-5 mr-2" />
+              <Button variant="tech" size="xl">
+                <Github className="h-5 w-5 mr-2 glow-icon" />
                 View All Projects
               </Button>
             </CardContent>

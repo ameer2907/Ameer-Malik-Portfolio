@@ -25,7 +25,7 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      scrolled ? 'bg-background/95 backdrop-blur-sm shadow-soft' : 'bg-transparent'
+      scrolled ? 'bg-background/95 backdrop-blur-sm shadow-glow' : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -52,24 +52,24 @@ const Navigation = () => {
             </div>
           </div>
 
-          {/* Social Links */}
+          {/* Social Links with glow */}
           <div className="hidden md:flex items-center space-x-4">
             <a
               href="https://github.com/ameer2907"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors glow-icon"
             >
-              <Github className="h-5 w-5" />
+              <Github className="h-5 w-5 animate-icon-glow" />
             </a>
             <a
               href="mailto:ameerofficial2907@gmail.com"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors glow-icon"
             >
-              <Mail className="h-5 w-5" />
+              <Mail className="h-5 w-5 animate-icon-glow" />
             </a>
-            <Button variant="outline" size="sm">
-              <ExternalLink className="h-4 w-4 mr-2" />
+            <Button variant="glow-outline" size="sm">
+              <ExternalLink className="h-4 w-4 mr-2 glow-icon" />
               Resume
             </Button>
           </div>
@@ -106,15 +106,15 @@ const Navigation = () => {
                   href="https://github.com/ameer2907"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-muted-foreground hover:text-primary transition-colors glow-icon"
                 >
-                  <Github className="h-5 w-5" />
+                  <Github className="h-5 w-5 animate-icon-glow" />
                 </a>
                 <a
                   href="mailto:ameerofficial2907@gmail.com"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-muted-foreground hover:text-primary transition-colors glow-icon"
                 >
-                  <Mail className="h-5 w-5" />
+                  <Mail className="h-5 w-5 animate-icon-glow" />
                 </a>
               </div>
             </div>

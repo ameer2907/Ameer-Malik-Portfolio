@@ -74,9 +74,9 @@ const SkillsSection = () => {
   return (
     <section id="skills" className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {/* Enhanced Section Header */}
         <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4">
+          <Badge variant="outline" className="mb-4 glow-button animate-pulse-glow">
             Skills & Expertise
           </Badge>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 font-space">
@@ -93,13 +93,13 @@ const SkillsSection = () => {
           {skillCategories.map((category, index) => (
             <Card 
               key={index} 
-              className="bg-gradient-card border-primary/20 hover:shadow-medium transition-all duration-300 animate-slide-up"
+              className="bg-gradient-card border-primary/30 project-glow animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader className="pb-4">
                 <CardTitle className="flex items-center space-x-3">
-                  <div className={`p-2 bg-primary/10 rounded-lg ${category.color}`}>
-                    <category.icon className="h-5 w-5" />
+                  <div className={`p-2 bg-primary/10 rounded-lg ${category.color} glow-button animate-pulse-glow`}>
+                    <category.icon className="h-5 w-5 glow-icon" />
                   </div>
                   <span className="font-space">{category.title}</span>
                 </CardTitle>
@@ -133,12 +133,12 @@ const SkillsSection = () => {
             {certifications.map((cert, index) => (
               <Card 
                 key={index} 
-                className="bg-gradient-card border-primary/20 hover:shadow-soft transition-all duration-300 group"
+                className="bg-gradient-card border-primary/30 project-glow group"
               >
                 <CardContent className="p-4">
                   <div className="flex items-start space-x-3">
-                    <div className="p-1 bg-accent/10 rounded group-hover:bg-accent/20 transition-colors">
-                      <BarChart3 className="h-4 w-4 text-accent" />
+                    <div className="p-1 bg-accent/10 rounded group-hover:bg-accent/20 transition-colors glow-button">
+                      <BarChart3 className="h-4 w-4 text-accent glow-icon animate-icon-glow" />
                     </div>
                     <span className="text-sm font-medium leading-relaxed">{cert}</span>
                   </div>
@@ -160,7 +160,7 @@ const SkillsSection = () => {
               <Badge 
                 key={tech} 
                 variant="secondary" 
-                className="hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer"
+                className="hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer glow-button animate-pulse-glow"
               >
                 {tech}
               </Badge>

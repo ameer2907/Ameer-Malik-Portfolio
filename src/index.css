@@ -8,75 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Professional Blue Portfolio Theme */
-    --background: 245 50% 99%;
-    --foreground: 215 25% 15%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
-
-    /* Primary Blue - Professional & Tech-focused */
-    --primary: 217 91% 60%;
-    --primary-dark: 217 91% 45%;
-    --primary-light: 217 91% 85%;
-    --primary-foreground: 0 0% 100%;
-
-    /* Secondary - Sophisticated Navy */
-    --secondary: 215 50% 25%;
-    --secondary-light: 215 50% 95%;
-    --secondary-foreground: 0 0% 100%;
-
-    /* Accent - Electric Blue for highlights */
-    --accent: 195 100% 50%;
-    --accent-light: 195 100% 95%;
-    --accent-foreground: 0 0% 100%;
-
-    /* Muted tones */
-    --muted: 215 25% 96%;
-    --muted-foreground: 215 25% 45%;
-
-    /* Tech-inspired gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 50%, hsl(var(--secondary)) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
-    
-    /* Advanced shadows */
-    --shadow-soft: 0 4px 6px -1px hsl(var(--primary) / 0.1), 0 2px 4px -1px hsl(var(--primary) / 0.06);
-    --shadow-medium: 0 10px 15px -3px hsl(var(--primary) / 0.1), 0 4px 6px -2px hsl(var(--primary) / 0.05);
-    --shadow-large: 0 25px 50px -12px hsl(var(--primary) / 0.25);
-    --shadow-glow: 0 0 30px hsl(var(--accent) / 0.3);
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 215 25% 88%;
-    --input: 215 25% 94%;
-    --ring: 217 91% 60%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    /* Dark mode - Professional Blue Theme */
+    /* Dark Mode Professional Tech Theme - Default */
     --background: 215 30% 8%;
     --foreground: 215 25% 95%;
 
@@ -86,30 +18,42 @@ All colors MUST be HSL.
     --popover: 215 30% 10%;
     --popover-foreground: 215 25% 95%;
 
+    /* Enhanced Primary Blue with Glow */
     --primary: 217 91% 65%;
     --primary-dark: 217 91% 50%;
     --primary-light: 217 91% 25%;
     --primary-foreground: 215 30% 8%;
+    --primary-glow: 217 91% 75%;
 
+    /* Enhanced Secondary */
     --secondary: 215 25% 20%;
     --secondary-light: 215 25% 15%;
     --secondary-foreground: 215 25% 95%;
 
+    /* Enhanced Accent with Cyan Glow */
     --accent: 195 100% 55%;
     --accent-light: 195 100% 20%;
     --accent-foreground: 215 30% 8%;
+    --accent-glow: 195 100% 70%;
 
+    /* Dark Muted tones */
     --muted: 215 25% 15%;
     --muted-foreground: 215 25% 60%;
 
+    /* Enhanced Tech Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
     --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 50%, hsl(var(--secondary)) 100%);
     --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
-
+    --gradient-glow: linear-gradient(135deg, hsl(var(--primary-glow)), hsl(var(--accent-glow)));
+    
+    /* Enhanced Glowing Shadows */
     --shadow-soft: 0 4px 6px -1px hsl(0 0% 0% / 0.3), 0 2px 4px -1px hsl(0 0% 0% / 0.2);
     --shadow-medium: 0 10px 15px -3px hsl(0 0% 0% / 0.3), 0 4px 6px -2px hsl(0 0% 0% / 0.2);
     --shadow-large: 0 25px 50px -12px hsl(0 0% 0% / 0.5);
     --shadow-glow: 0 0 30px hsl(var(--accent) / 0.4);
+    --shadow-glow-intense: 0 0 50px hsl(var(--primary-glow) / 0.6);
+    --shadow-icon-glow: 0 0 20px hsl(var(--accent) / 0.5);
+    --shadow-button-glow: 0 0 25px hsl(var(--primary) / 0.4);
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
@@ -117,6 +61,9 @@ All colors MUST be HSL.
     --border: 215 25% 20%;
     --input: 215 25% 15%;
     --ring: 217 91% 65%;
+
+    --radius: 0.5rem;
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -124,6 +71,65 @@ All colors MUST be HSL.
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .light {
+    /* Light mode - fallback */
+    --background: 245 50% 99%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    --primary: 217 91% 60%;
+    --primary-dark: 217 91% 45%;
+    --primary-light: 217 91% 85%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 217 91% 75%;
+
+    --secondary: 215 50% 25%;
+    --secondary-light: 215 50% 95%;
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 195 100% 50%;
+    --accent-light: 195 100% 95%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 195 100% 60%;
+
+    --muted: 215 25% 96%;
+    --muted-foreground: 215 25% 45%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 50%, hsl(var(--secondary)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
+    --gradient-glow: linear-gradient(135deg, hsl(var(--primary-glow)), hsl(var(--accent-glow)));
+
+    --shadow-soft: 0 4px 6px -1px hsl(var(--primary) / 0.1), 0 2px 4px -1px hsl(var(--primary) / 0.06);
+    --shadow-medium: 0 10px 15px -3px hsl(var(--primary) / 0.1), 0 4px 6px -2px hsl(var(--primary) / 0.05);
+    --shadow-large: 0 25px 50px -12px hsl(var(--primary) / 0.25);
+    --shadow-glow: 0 0 30px hsl(var(--accent) / 0.3);
+    --shadow-glow-intense: 0 0 50px hsl(var(--primary-glow) / 0.4);
+    --shadow-icon-glow: 0 0 20px hsl(var(--accent) / 0.3);
+    --shadow-button-glow: 0 0 25px hsl(var(--primary) / 0.2);
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 25% 88%;
+    --input: 215 25% 94%;
+    --ring: 217 91% 60%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
@@ -151,6 +157,27 @@ All colors MUST be HSL.
   @keyframes glow {
     0%, 100% { box-shadow: 0 0 20px hsl(var(--accent) / 0.3); }
     50% { box-shadow: 0 0 40px hsl(var(--accent) / 0.6); }
+  }
+
+  @keyframes intense-glow {
+    0%, 100% { 
+      box-shadow: 0 0 30px hsl(var(--primary) / 0.4), 0 0 60px hsl(var(--accent) / 0.3);
+      transform: scale(1);
+    }
+    50% { 
+      box-shadow: 0 0 50px hsl(var(--primary) / 0.7), 0 0 100px hsl(var(--accent) / 0.5);
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes icon-glow {
+    0%, 100% { filter: drop-shadow(0 0 10px hsl(var(--accent) / 0.4)); }
+    50% { filter: drop-shadow(0 0 20px hsl(var(--accent) / 0.8)); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
   }
 
   @keyframes slide-up {
@@ -182,6 +209,9 @@ All colors MUST be HSL.
 
   .animate-float { animation: float 6s ease-in-out infinite; }
   .animate-glow { animation: glow 3s ease-in-out infinite; }
+  .animate-intense-glow { animation: intense-glow 4s ease-in-out infinite; }
+  .animate-icon-glow { animation: icon-glow 2s ease-in-out infinite; }
+  .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
   .animate-slide-up { animation: slide-up 0.6s ease-out; }
   .animate-fade-in { animation: fade-in 0.8s ease-out; }
   .animate-scale-in { animation: scale-in 0.5s ease-out; }
@@ -199,5 +229,39 @@ All colors MUST be HSL.
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Glowing button effects */
+  .glow-button {
+    position: relative;
+    box-shadow: var(--shadow-button-glow);
+    transition: all 0.3s ease;
+  }
+
+  .glow-button:hover {
+    box-shadow: var(--shadow-glow-intense);
+    transform: translateY(-2px);
+  }
+
+  .glow-icon {
+    filter: drop-shadow(0 0 10px hsl(var(--accent) / 0.4));
+    transition: all 0.3s ease;
+  }
+
+  .glow-icon:hover {
+    filter: drop-shadow(0 0 20px hsl(var(--accent) / 0.8));
+  }
+
+  /* Project card glow */
+  .project-glow {
+    border: 2px solid hsl(var(--primary) / 0.3);
+    box-shadow: var(--shadow-glow);
+    transition: all 0.3s ease;
+  }
+
+  .project-glow:hover {
+    border-color: hsl(var(--accent) / 0.6);
+    box-shadow: var(--shadow-glow-intense);
+    transform: translateY(-5px);
   }
 }
