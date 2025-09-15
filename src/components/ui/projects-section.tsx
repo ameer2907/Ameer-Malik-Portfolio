@@ -34,10 +34,10 @@ const ProjectsSection = () => {
       image: 'gradient-from-blue-500 to-purple-600'
     },
     {
-      title: 'IoT Enabled Smart Waste Management System with Real Time Analysis',
-      description: 'Developing an intelligent IoT-based waste management system with real-time monitoring, automated sorting, and predictive analytics for optimized collection routes.',
+      title: 'Advanced Traffic Management System using IoT with Real Time Monitoring Dashboard',
+      description: 'Intelligent traffic control system utilizing IoT sensors and machine learning algorithms to optimize traffic flow, reduce congestion, and provide real-time monitoring through an interactive dashboard for urban traffic management.',
       icon: Trash2,
-      status: 'In Progress',
+      status: 'In Active',
       featured: true,
       technologies: ['IoT', 'Arduino', 'Machine Learning', 'Real-time Analytics', 'Mobile App', 'Sensor Integration'],
       features: [

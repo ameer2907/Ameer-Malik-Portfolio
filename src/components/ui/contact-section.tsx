@@ -55,6 +55,13 @@ const ContactSection = () => {
       value: 'github.com/ameer2907',
       href: 'https://github.com/ameer2907',
       color: 'text-gray-700'
+    },
+    {
+      icon: Linkedin,
+      label: 'LinkedIn',
+      value: 'www.linkedin.com/in/k-ameer-malik-454271316',
+      href: 'https://www.linkedin.com/in/k-ameer-malik-454271316',
+      color: 'text-blue-600'
     }
   ];
 

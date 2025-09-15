@@ -32,22 +32,21 @@ const HeroSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left animate-slide-up">
-            <Badge variant="secondary" className="mb-6 animate-scale-in">
-              🚀 Available for Internship Opportunities
-            </Badge>
-            
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 font-space">
-              <span className="block text-foreground">Hi, I'm</span>
+              <span className="block text-foreground">Hello, I'm</span>
               <span className="block gradient-text">K.Ameer Malik</span>
-              <span className="block text-2xl sm:text-3xl lg:text-4xl text-muted-foreground mt-2">
+              <span className="block text-2xl sm:text-3xl lg:text-4xl text-muted-foreground mt-2 mb-8">
                 Final-Year CSE Student, AI & Data Science Specialization
               </span>
             </h1>
             
-            <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl">
-              A forward-thinking innovator who transforms ideas into powerful, real-world solutions. 
-              I blend creativity with precision to deliver impactful AI and machine learning projects.
-            </p>
+            {/* Delayed intro popup */}
+            <div className="text-center animate-fade-in" style={{ animationDelay: '2s' }}>
+              <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+                A forward-thinking innovator who transforms ideas into powerful, real-world solutions. 
+                I blend creativity with precision to deliver impactful AI and machine learning projects.
+              </p>
+            </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
               <Button variant="glow" size="xl" className="animate-intense-glow">
@@ -64,14 +63,6 @@ const HeroSection = () => {
               </Button>
             </div>
             
-            {/* Tech Stack Tags with glow */}
-            <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-              {['Python', 'Machine Learning', 'AI', 'Java', 'SQL', 'BI', 'UI/UX Design', 'Data Analysis'].map((tech) => (
-                <Badge key={tech} variant="outline" className="text-sm glow-button animate-pulse-glow hover:shadow-glow-intense">
-                  {tech}
-                </Badge>
-              ))}
-            </div>
           </div>
           
           {/* Enhanced Profile Image with tech glow */}

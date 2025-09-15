@@ -21,7 +21,7 @@ const SkillsSection = () => {
       skills: [
         { name: 'Python' },
         { name: 'Java' },
-        { name: 'C Programming' },
+        { name: 'C/C++' },
         { name: 'SQL' },
       ],
     },
