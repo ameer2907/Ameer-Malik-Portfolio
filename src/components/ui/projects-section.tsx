@@ -23,7 +23,7 @@ const ProjectsSection = () => {
       title: 'Advanced Traffic Management System using IoT with Real Time Monitoring Dashboard',
       description: 'Intelligent traffic control system utilizing IoT sensors and machine learning algorithms to optimize traffic flow, reduce congestion, and provide real-time monitoring through an interactive dashboard for urban traffic management.',
       icon: Navigation,
-      status: 'In Active',
+      status: 'Completed',
       featured: true,
       technologies: ['IoT', 'Python', 'Machine Learning', 'Real-time Analytics', 'Dashboard', 'Sensor Integration'],
       features: [
@@ -41,7 +41,7 @@ const ProjectsSection = () => {
       title: 'IoT Enabled Smart Waste Management System with Real Time Analytics',
       description: 'Intelligent IoT-based waste management system with real-time monitoring, automated sorting, and predictive analytics for optimized collection routes and environmental sustainability.',
       icon: Recycle,
-      status: 'Completed',
+      status: 'In Active',
       featured: true,
       technologies: ['IoT', 'Arduino', 'Machine Learning', 'Real-time Analytics', 'Mobile App', 'Environmental Tech'],
       features: [
