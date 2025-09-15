@@ -9,37 +9,41 @@ import {
   ShoppingCart, 
   User,
   Calendar,
-  Star
+  Star,
+  Navigation,
+  Recycle,
+  Monitor,
+  Globe
 } from 'lucide-react';
 import aiPattern from '@/assets/ai-pattern.jpg';
 
 const ProjectsSection = () => {
   const projects = [
     {
-      title: 'Advanced Traffic Management System',
-      description: 'Built a dynamic traffic control solution with vehicle detection, congestion level analysis, and real-time map display for smarter traffic flow management.',
-      icon: Car,
-      status: 'Completed',
+      title: 'Advanced Traffic Management System using IoT with Real Time Monitoring Dashboard',
+      description: 'Intelligent traffic control system utilizing IoT sensors and machine learning algorithms to optimize traffic flow, reduce congestion, and provide real-time monitoring through an interactive dashboard for urban traffic management.',
+      icon: Navigation,
+      status: 'In Active',
       featured: true,
-      technologies: ['Python', 'OpenCV', 'Machine Learning', 'Real-time Processing', 'Data Visualization'],
+      technologies: ['IoT', 'Python', 'Machine Learning', 'Real-time Analytics', 'Dashboard', 'Sensor Integration'],
       features: [
-        'Vehicle detection and counting',
-        'Traffic congestion analysis',
-        'Real-time map integration',
+        'IoT-enabled traffic monitoring',
+        'Real-time dashboard analytics',
         'Smart signal optimization',
-        'Data analytics dashboard'
+        'Traffic flow prediction',
+        'Congestion management system'
       ],
       github: '#',
       demo: '#',
       image: 'gradient-from-blue-500 to-purple-600'
     },
     {
-      title: 'Advanced Traffic Management System using IoT with Real Time Monitoring Dashboard',
-      description: 'Intelligent traffic control system utilizing IoT sensors and machine learning algorithms to optimize traffic flow, reduce congestion, and provide real-time monitoring through an interactive dashboard for urban traffic management.',
-      icon: Trash2,
-      status: 'In Active',
+      title: 'IoT Enabled Smart Waste Management System with Real Time Analytics',
+      description: 'Intelligent IoT-based waste management system with real-time monitoring, automated sorting, and predictive analytics for optimized collection routes and environmental sustainability.',
+      icon: Recycle,
+      status: 'Completed',
       featured: true,
-      technologies: ['IoT', 'Arduino', 'Machine Learning', 'Real-time Analytics', 'Mobile App', 'Sensor Integration'],
+      technologies: ['IoT', 'Arduino', 'Machine Learning', 'Real-time Analytics', 'Mobile App', 'Environmental Tech'],
       features: [
         'IoT-enabled waste bin monitoring',
         'Real-time analytics dashboard',
@@ -72,7 +76,7 @@ const ProjectsSection = () => {
     {
       title: 'Portfolio Website',
       description: 'Designed and developed a responsive, animated personal portfolio showcasing skills, projects, and certifications with interactive UI/UX features.',
-      icon: User,
+      icon: Monitor,
       status: 'Completed',
       featured: false,
       technologies: ['React.js', 'TypeScript', 'Tailwind CSS', 'Responsive Design'],
