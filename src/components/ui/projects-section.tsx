@@ -34,18 +34,18 @@ const ProjectsSection = () => {
       image: 'gradient-from-blue-500 to-purple-600'
     },
     {
-      title: 'Smart Waste Segregating System',
-      description: 'Developing an automated waste segregation system using smart sensors for efficient recycling and waste management.',
+      title: 'IoT Enabled Smart Waste Management System with Real Time Analysis',
+      description: 'Developing an intelligent IoT-based waste management system with real-time monitoring, automated sorting, and predictive analytics for optimized collection routes.',
       icon: Trash2,
       status: 'In Progress',
       featured: true,
-      technologies: ['IoT', 'Arduino', 'Machine Learning', 'Computer Vision', 'Mobile App'],
+      technologies: ['IoT', 'Arduino', 'Machine Learning', 'Real-time Analytics', 'Mobile App', 'Sensor Integration'],
       features: [
+        'IoT-enabled waste bin monitoring',
+        'Real-time analytics dashboard',
         'Automated waste classification',
-        'Smart sensor integration',
-        'Mobile app for monitoring',
-        'Real-time data collection',
-        'Environmental impact tracking'
+        'Predictive collection scheduling',
+        'Environmental impact analysis'
       ],
       github: '#',
       demo: '#',
@@ -57,7 +57,7 @@ const ProjectsSection = () => {
       icon: ShoppingCart,
       status: 'Completed',
       featured: false,
-      technologies: ['React.js', 'Node.js', 'MongoDB', 'Stripe API', 'Socket.io'],
+      technologies: ['React.js', 'Node.js', 'Socket.io', 'Payment Integration'],
       features: [
         'Responsive design',
         'Shopping cart functionality',
@@ -75,7 +75,7 @@ const ProjectsSection = () => {
       icon: User,
       status: 'Completed',
       featured: false,
-      technologies: ['React.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Responsive Design'],
+      technologies: ['React.js', 'TypeScript', 'Tailwind CSS', 'Responsive Design'],
       features: [
         'Responsive design',
         'Interactive animations',

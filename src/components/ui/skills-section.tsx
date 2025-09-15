@@ -19,10 +19,10 @@ const SkillsSection = () => {
       icon: Code,
       color: 'text-blue-500',
       skills: [
-        { name: 'Python', level: 90 },
-        { name: 'Java', level: 85 },
-        { name: 'JavaScript', level: 80 },
-        { name: 'SQL', level: 75 },
+        { name: 'Python' },
+        { name: 'Java' },
+        { name: 'C Programming' },
+        { name: 'SQL' },
       ],
     },
     {
@@ -30,21 +30,21 @@ const SkillsSection = () => {
       icon: Brain,
       color: 'text-purple-500',
       skills: [
-        { name: 'Machine Learning', level: 85 },
-        { name: 'Artificial Intelligence', level: 80 },
-        { name: 'Data Analysis', level: 88 },
-        { name: 'Deep Learning', level: 75 },
+        { name: 'Machine Learning' },
+        { name: 'Artificial Intelligence' },
+        { name: 'Data Analysis' },
+        { name: 'Deep Learning' },
       ],
     },
     {
-      title: 'Web Development',
-      icon: Globe,
+      title: 'Design & Development',
+      icon: Palette,
       color: 'text-green-500',
       skills: [
-        { name: 'React.js', level: 85 },
-        { name: 'HTML/CSS', level: 90 },
-        { name: 'Node.js', level: 70 },
-        { name: 'REST APIs', level: 80 },
+        { name: 'UI/UX Design' },
+        { name: 'HTML/CSS' },
+        { name: 'JavaScript' },
+        { name: 'DBMS' },
       ],
     },
     {
@@ -52,10 +52,10 @@ const SkillsSection = () => {
       icon: Monitor,
       color: 'text-orange-500',
       skills: [
-        { name: 'Power BI', level: 85 },
-        { name: 'Git/GitHub', level: 80 },
-        { name: 'Docker', level: 65 },
-        { name: 'Azure', level: 70 },
+        { name: 'Power BI' },
+        { name: 'Git/GitHub' },
+        { name: 'Azure' },
+        { name: 'Business Intelligence' },
       ],
     },
   ];
@@ -108,14 +108,10 @@ const SkillsSection = () => {
                 <div className="space-y-4">
                   {category.skills.map((skill, skillIndex) => (
                     <div key={skillIndex} className="space-y-2">
-                      <div className="flex justify-between items-center">
+                      <div className="flex items-center">
+                        <div className="w-2 h-2 bg-primary rounded-full mr-3 animate-pulse-glow"></div>
                         <span className="font-medium">{skill.name}</span>
-                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
                       </div>
-                      <Progress 
-                        value={skill.level} 
-                        className="h-2"
-                      />
                     </div>
                   ))}
                 </div>
@@ -148,25 +144,6 @@ const SkillsSection = () => {
           </div>
         </div>
 
-        {/* Additional Skills Tags */}
-        <div className="mt-16 text-center">
-          <h4 className="text-lg font-semibold mb-6">Additional Technologies</h4>
-          <div className="flex flex-wrap justify-center gap-3">
-            {[
-              'TensorFlow', 'Pandas', 'NumPy', 'Scikit-learn', 'Jupyter',
-              'MongoDB', 'PostgreSQL', 'Redis', 'AWS', 'GCP',
-              'Figma', 'Adobe XD', 'Bootstrap', 'Tailwind CSS', 'Material-UI'
-            ].map((tech) => (
-              <Badge 
-                key={tech} 
-                variant="secondary" 
-                className="hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer glow-button animate-pulse-glow"
-              >
-                {tech}
-              </Badge>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

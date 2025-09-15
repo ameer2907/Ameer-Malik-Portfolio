@@ -40,7 +40,7 @@ const HeroSection = () => {
               <span className="block text-foreground">Hi, I'm</span>
               <span className="block gradient-text">K.Ameer Malik</span>
               <span className="block text-2xl sm:text-3xl lg:text-4xl text-muted-foreground mt-2">
-                AI & Data Science Engineer
+                Final-Year CSE Student, AI & Data Science Specialization
               </span>
             </h1>
             
@@ -66,7 +66,7 @@ const HeroSection = () => {
             
             {/* Tech Stack Tags with glow */}
             <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-              {['Python', 'Machine Learning', 'AI', 'Java', 'React', 'Data Analysis'].map((tech) => (
+              {['Python', 'Machine Learning', 'AI', 'Java', 'SQL', 'BI', 'UI/UX Design', 'Data Analysis'].map((tech) => (
                 <Badge key={tech} variant="outline" className="text-sm glow-button animate-pulse-glow hover:shadow-glow-intense">
                   {tech}
                 </Badge>
