@@ -17,8 +17,8 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-20 tech-section relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <Badge variant="outline" className="mb-4">
@@ -110,9 +110,9 @@ const AboutSection = () => {
               <CardContent className="p-6">
                 <h4 className="font-bold text-lg mb-6 gradient-text font-space">Connect With Me</h4>
                 <div className="space-y-4">
-                  <div className="flex items-center p-4 rounded-lg bg-primary/5 border border-primary/20 hover:bg-primary/10 hover:border-primary/40 transition-all duration-300 hover:shadow-soft">
+                  <div className="contact-item flex items-center p-4 rounded-lg">
                     <div className="p-2 bg-primary/20 rounded-lg mr-3 animate-pulse-glow">
-                      <MapPin className="h-4 w-4 text-primary glow-icon" />
+                      <MapPin className="h-4 w-4 text-primary contact-icon" />
                     </div>
                     <div>
                       <p className="text-sm font-bold">Location</p>
@@ -121,10 +121,10 @@ const AboutSection = () => {
                   </div>
                   <a 
                     href="mailto:ameermalikbahad07@gmail.com"
-                    className="flex items-center p-4 rounded-lg bg-accent/5 border border-accent/20 hover:bg-accent/10 hover:border-accent/40 transition-all duration-300 hover:shadow-soft group"
+                    className="contact-item flex items-center p-4 rounded-lg group"
                   >
                     <div className="p-2 bg-accent/20 rounded-lg mr-3 group-hover:animate-glow">
-                      <Mail className="h-4 w-4 text-accent glow-icon" />
+                      <Mail className="h-4 w-4 text-accent contact-icon" />
                     </div>
                     <div>
                       <p className="text-sm font-bold">Email</p>
@@ -133,10 +133,10 @@ const AboutSection = () => {
                   </a>
                   <a 
                     href="tel:+919087223978"
-                    className="flex items-center p-4 rounded-lg bg-secondary/5 border border-secondary/20 hover:bg-secondary/10 hover:border-secondary/40 transition-all duration-300 hover:shadow-soft group"
+                    className="contact-item flex items-center p-4 rounded-lg group"
                   >
                     <div className="p-2 bg-secondary/20 rounded-lg mr-3 group-hover:animate-glow">
-                      <Phone className="h-4 w-4 text-secondary glow-icon" />
+                      <Phone className="h-4 w-4 text-secondary contact-icon" />
                     </div>
                     <div>
                       <p className="text-sm font-bold">Phone</p>
@@ -147,10 +147,10 @@ const AboutSection = () => {
                     href="https://www.linkedin.com/in/ameer-malik-bahad07"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center p-4 rounded-lg bg-blue-500/5 border border-blue-500/20 hover:bg-blue-500/10 hover:border-blue-500/40 transition-all duration-300 hover:shadow-soft group"
+                    className="contact-item flex items-center p-4 rounded-lg group"
                   >
                     <div className="p-2 bg-blue-500/20 rounded-lg mr-3 group-hover:animate-glow">
-                      <Linkedin className="h-4 w-4 text-blue-500 glow-icon" />
+                      <Linkedin className="h-4 w-4 text-blue-500 contact-icon" />
                     </div>
                     <div>
                       <p className="text-sm font-bold">LinkedIn</p>
@@ -161,10 +161,10 @@ const AboutSection = () => {
                     href="https://github.com/ameer2907"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center p-4 rounded-lg bg-gray-500/5 border border-gray-500/20 hover:bg-gray-500/10 hover:border-gray-500/40 transition-all duration-300 hover:shadow-soft group"
+                    className="contact-item flex items-center p-4 rounded-lg group"
                   >
                     <div className="p-2 bg-gray-500/20 rounded-lg mr-3 group-hover:animate-glow">
-                      <Github className="h-4 w-4 text-gray-400 glow-icon" />
+                      <Github className="h-4 w-4 text-gray-400 contact-icon" />
                     </div>
                     <div>
                       <p className="text-sm font-bold">GitHub</p>
