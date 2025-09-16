@@ -31,8 +31,8 @@ const ContactSection = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'ameerofficial2907@gmail.com',
-      href: 'mailto:ameerofficial2907@gmail.com',
+      value: 'ameermalikbahad07@gmail.com',
+      href: 'mailto:ameermalikbahad07@gmail.com',
       color: 'text-blue-500'
     },
     {
@@ -59,8 +59,8 @@ const ContactSection = () => {
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      value: 'www.linkedin.com/in/k-ameer-malik-454271316',
-      href: 'https://www.linkedin.com/in/k-ameer-malik-454271316',
+      value: 'www.linkedin.com/in/ameer-malik-bahad07',
+      href: 'https://www.linkedin.com/in/ameer-malik-bahad07',
       color: 'text-blue-600'
     }
   ];

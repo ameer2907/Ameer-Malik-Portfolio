@@ -43,23 +43,19 @@ const HeroSection = () => {
             {/* Delayed intro popup */}
             <div className="text-center animate-fade-in" style={{ animationDelay: '2s' }}>
               <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                A forward-thinking innovator who transforms ideas into powerful, real-world solutions. 
-                I blend creativity with precision to deliver impactful AI and machine learning projects.
+                Passionate technologist dedicated to crafting innovative AI-driven solutions that bridge the gap between complex data and meaningful insights. 
+                Committed to excellence through continuous learning and strategic problem-solving in the evolving landscape of artificial intelligence.
               </p>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
               <Button variant="glow" size="xl" className="animate-intense-glow">
-                <Mail className="mr-2 h-5 w-5 glow-icon" />
-                Get In Touch
-              </Button>
-              <Button variant="glow-outline" size="xl">
-                <Download className="mr-2 h-5 w-5 glow-icon" />
-                Download Resume
-              </Button>
-              <Button variant="tech" size="xl">
                 <Github className="mr-2 h-5 w-5 glow-icon" />
                 View Projects
+              </Button>
+              <Button variant="outline" size="xl">
+                <Download className="mr-2 h-5 w-5" />
+                Download Resume
               </Button>
             </div>
             

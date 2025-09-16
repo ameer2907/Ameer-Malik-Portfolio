@@ -120,6 +120,37 @@ const SkillsSection = () => {
           ))}
         </div>
 
+        {/* Soft Skills */}
+        <div className="mb-16 animate-fade-in">
+          <h3 className="text-2xl font-bold mb-8 text-center font-space">
+            Professional <span className="gradient-text">Soft Skills</span>
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              'Problem-Solving & Critical Thinking',
+              'Team Collaboration & Leadership', 
+              'Adaptability & Continuous Learning',
+              'Effective Communication',
+              'Creativity & Innovation',
+              'Time Management & Organization'
+            ].map((skill, index) => (
+              <Card 
+                key={index} 
+                className="bg-gradient-card border-primary/30 project-glow group hover:shadow-glow transition-all duration-300"
+              >
+                <CardContent className="p-4 text-center">
+                  <div className="flex justify-center mb-3">
+                    <div className="p-2 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors glow-button">
+                      <BarChart3 className="h-5 w-5 text-accent glow-icon" />
+                    </div>
+                  </div>
+                  <span className="text-sm font-medium">{skill}</span>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
         {/* Certifications */}
         <div className="animate-fade-in">
           <h3 className="text-2xl font-bold mb-8 text-center font-space">

@@ -84,29 +84,6 @@ const AboutSection = () => {
 
           {/* Stats & Languages */}
           <div className="space-y-8 animate-fade-in">
-            {/* Stats Grid */}
-            <div>
-              <h3 className="text-2xl font-bold mb-6 font-space">By the Numbers</h3>
-              <div className="grid grid-cols-2 gap-4">
-                {stats.map((stat, index) => (
-                  <Card key={index} className="bg-gradient-card border-primary/20 hover:shadow-medium transition-shadow">
-                    <CardContent className="p-6 text-center">
-                      <div className="flex justify-center mb-3">
-                        <div className="p-2 bg-primary/10 rounded-lg">
-                          <stat.icon className="h-6 w-6 text-primary" />
-                        </div>
-                      </div>
-                      <div className="text-2xl font-bold gradient-text mb-1">
-                        {stat.value}
-                      </div>
-                      <div className="text-sm text-muted-foreground">
-                        {stat.label}
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
 
             {/* Languages */}
             <div>
@@ -126,23 +103,45 @@ const AboutSection = () => {
             </div>
 
             {/* Contact Info */}
-            <Card className="bg-gradient-card border-primary/20">
+            <Card className="bg-gradient-card border-primary/20 hover:shadow-glow transition-all duration-300">
               <CardContent className="p-6">
-                <h4 className="font-semibold mb-4">Get in Touch</h4>
-                <div className="space-y-2 text-sm">
-                  <div className="flex items-center">
-                    <MapPin className="h-4 w-4 mr-2 text-primary" />
-                    West Tambaram, Chennai-600045
+                <h4 className="font-bold text-lg mb-6 gradient-text font-space">Connect With Me</h4>
+                <div className="space-y-4">
+                  <div className="flex items-center p-3 rounded-lg bg-primary/5 border border-primary/10 hover:bg-primary/10 transition-colors">
+                    <div className="p-2 bg-primary/10 rounded-lg mr-3">
+                      <MapPin className="h-4 w-4 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium">Location</p>
+                      <p className="text-xs text-muted-foreground">West Tambaram, Chennai-600045</p>
+                    </div>
                   </div>
-                  <div className="flex items-center">
-                    <Badge variant="outline" className="text-xs">
-                      📧 ameerofficial2907@gmail.com
-                    </Badge>
+                  <div className="flex items-center p-3 rounded-lg bg-accent/5 border border-accent/10 hover:bg-accent/10 transition-colors">
+                    <div className="p-2 bg-accent/10 rounded-lg mr-3">
+                      <Badge variant="outline" className="text-xs border-0 bg-transparent p-0">📧</Badge>
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium">Email</p>
+                      <p className="text-xs text-muted-foreground">ameermalikbahad07@gmail.com</p>
+                    </div>
                   </div>
-                  <div className="flex items-center">
-                    <Badge variant="outline" className="text-xs">
-                      📱 +91 9087223978
-                    </Badge>
+                  <div className="flex items-center p-3 rounded-lg bg-secondary/5 border border-secondary/10 hover:bg-secondary/10 transition-colors">
+                    <div className="p-2 bg-secondary/10 rounded-lg mr-3">
+                      <Badge variant="outline" className="text-xs border-0 bg-transparent p-0">📱</Badge>
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium">Phone</p>
+                      <p className="text-xs text-muted-foreground">+91 9087223978</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center p-3 rounded-lg bg-blue-500/5 border border-blue-500/10 hover:bg-blue-500/10 transition-colors">
+                    <div className="p-2 bg-blue-500/10 rounded-lg mr-3">
+                      <Badge variant="outline" className="text-xs border-0 bg-transparent p-0">💼</Badge>
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium">LinkedIn</p>
+                      <p className="text-xs text-muted-foreground">www.linkedin.com/in/ameer-malik-bahad07</p>
+                    </div>
                   </div>
                 </div>
               </CardContent>
