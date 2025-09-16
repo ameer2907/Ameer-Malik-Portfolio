@@ -231,34 +231,8 @@ const ContactSection = () => {
             </Card>
           </div>
 
-          {/* Contact Information & Quick Actions */}
+          {/* Enhanced Quick Actions */}
           <div className="space-y-6">
-            {/* Contact Info */}
-            <Card className="bg-gradient-card border-primary/20 shadow-medium">
-              <CardHeader>
-                <CardTitle className="font-space">Contact Information</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {contactInfo.map((info, index) => (
-                  <a
-                    key={index}
-                    href={info.href}
-                    target={info.href.startsWith('http') ? '_blank' : undefined}
-                    rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
-                  >
-                    <div className={`p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors ${info.color}`}>
-                      <info.icon className="h-4 w-4" />
-                    </div>
-                    <div>
-                      <div className="font-medium">{info.label}</div>
-                      <div className="text-sm text-muted-foreground">{info.value}</div>
-                    </div>
-                  </a>
-                ))}
-              </CardContent>
-            </Card>
-
             {/* Quick Actions */}
             <Card className="bg-gradient-card border-primary/20 shadow-medium">
               <CardHeader>

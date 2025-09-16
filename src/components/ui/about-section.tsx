@@ -1,6 +1,6 @@
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { GraduationCap, MapPin, Calendar, Award, Users, Code } from 'lucide-react';
+import { GraduationCap, MapPin, Calendar, Award, Users, Code, Mail, Phone, Linkedin, Github } from 'lucide-react';
 
 const AboutSection = () => {
   const stats = [
@@ -56,30 +56,33 @@ const AboutSection = () => {
               </p>
             </div>
 
-            {/* Education */}
-            <Card className="mt-8 bg-gradient-card border-primary/20">
-              <CardContent className="p-6">
-                <div className="flex items-start space-x-4">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <GraduationCap className="h-6 w-6 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-semibold text-lg">B.Tech CSE (Data Science & AI)</h4>
-                    <p className="text-muted-foreground mb-2">Dr.M.G.R Educational and Research Institute</p>
-                    <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-                      <div className="flex items-center">
-                        <Calendar className="h-4 w-4 mr-1" />
-                        2022 - Present
-                      </div>
-                      <div className="flex items-center">
-                        <MapPin className="h-4 w-4 mr-1" />
-                        Chennai, India
+            {/* Education Section */}
+            <div className="mt-12">
+              <h3 className="text-2xl font-bold mb-6 font-space">Education</h3>
+              <Card className="bg-gradient-card border-primary/20 shadow-glow hover:shadow-glow-intense transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="p-3 bg-primary/10 rounded-lg animate-glow">
+                      <GraduationCap className="h-6 w-6 text-primary glow-icon" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-xl gradient-text mb-2">B.Tech CSE (Data Science & AI)</h4>
+                      <p className="text-foreground font-semibold mb-2">Dr.M.G.R Educational and Research Institute</p>
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 space-y-2 sm:space-y-0 text-sm text-muted-foreground">
+                        <div className="flex items-center">
+                          <Calendar className="h-4 w-4 mr-2 text-accent" />
+                          <span className="font-medium">2022 - 2026</span>
+                        </div>
+                        <div className="flex items-center">
+                          <MapPin className="h-4 w-4 mr-2 text-accent" />
+                          <span className="font-medium">Maduravoyal, Chennai, 600095</span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
           </div>
 
           {/* Stats & Languages */}
@@ -102,47 +105,72 @@ const AboutSection = () => {
               </Card>
             </div>
 
-            {/* Contact Info */}
-            <Card className="bg-gradient-card border-primary/20 hover:shadow-glow transition-all duration-300">
+            {/* Connect With Me - Enhanced */}
+            <Card className="bg-gradient-card border-primary/20 hover:shadow-glow-intense transition-all duration-300 animate-glow">
               <CardContent className="p-6">
                 <h4 className="font-bold text-lg mb-6 gradient-text font-space">Connect With Me</h4>
                 <div className="space-y-4">
-                  <div className="flex items-center p-3 rounded-lg bg-primary/5 border border-primary/10 hover:bg-primary/10 transition-colors">
-                    <div className="p-2 bg-primary/10 rounded-lg mr-3">
-                      <MapPin className="h-4 w-4 text-primary" />
+                  <div className="flex items-center p-4 rounded-lg bg-primary/5 border border-primary/20 hover:bg-primary/10 hover:border-primary/40 transition-all duration-300 hover:shadow-soft">
+                    <div className="p-2 bg-primary/20 rounded-lg mr-3 animate-pulse-glow">
+                      <MapPin className="h-4 w-4 text-primary glow-icon" />
                     </div>
                     <div>
-                      <p className="text-sm font-medium">Location</p>
-                      <p className="text-xs text-muted-foreground">West Tambaram, Chennai-600045</p>
+                      <p className="text-sm font-bold">Location</p>
+                      <p className="text-xs text-foreground/80">West Tambaram, Chennai-600045</p>
                     </div>
                   </div>
-                  <div className="flex items-center p-3 rounded-lg bg-accent/5 border border-accent/10 hover:bg-accent/10 transition-colors">
-                    <div className="p-2 bg-accent/10 rounded-lg mr-3">
-                      <Badge variant="outline" className="text-xs border-0 bg-transparent p-0">📧</Badge>
+                  <a 
+                    href="mailto:ameermalikbahad07@gmail.com"
+                    className="flex items-center p-4 rounded-lg bg-accent/5 border border-accent/20 hover:bg-accent/10 hover:border-accent/40 transition-all duration-300 hover:shadow-soft group"
+                  >
+                    <div className="p-2 bg-accent/20 rounded-lg mr-3 group-hover:animate-glow">
+                      <Mail className="h-4 w-4 text-accent glow-icon" />
                     </div>
                     <div>
-                      <p className="text-sm font-medium">Email</p>
-                      <p className="text-xs text-muted-foreground">ameermalikbahad07@gmail.com</p>
+                      <p className="text-sm font-bold">Email</p>
+                      <p className="text-xs text-foreground/80 group-hover:text-accent transition-colors">ameermalikbahad07@gmail.com</p>
                     </div>
-                  </div>
-                  <div className="flex items-center p-3 rounded-lg bg-secondary/5 border border-secondary/10 hover:bg-secondary/10 transition-colors">
-                    <div className="p-2 bg-secondary/10 rounded-lg mr-3">
-                      <Badge variant="outline" className="text-xs border-0 bg-transparent p-0">📱</Badge>
-                    </div>
-                    <div>
-                      <p className="text-sm font-medium">Phone</p>
-                      <p className="text-xs text-muted-foreground">+91 9087223978</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center p-3 rounded-lg bg-blue-500/5 border border-blue-500/10 hover:bg-blue-500/10 transition-colors">
-                    <div className="p-2 bg-blue-500/10 rounded-lg mr-3">
-                      <Badge variant="outline" className="text-xs border-0 bg-transparent p-0">💼</Badge>
+                  </a>
+                  <a 
+                    href="tel:+919087223978"
+                    className="flex items-center p-4 rounded-lg bg-secondary/5 border border-secondary/20 hover:bg-secondary/10 hover:border-secondary/40 transition-all duration-300 hover:shadow-soft group"
+                  >
+                    <div className="p-2 bg-secondary/20 rounded-lg mr-3 group-hover:animate-glow">
+                      <Phone className="h-4 w-4 text-secondary glow-icon" />
                     </div>
                     <div>
-                      <p className="text-sm font-medium">LinkedIn</p>
-                      <p className="text-xs text-muted-foreground">www.linkedin.com/in/ameer-malik-bahad07</p>
+                      <p className="text-sm font-bold">Phone</p>
+                      <p className="text-xs text-foreground/80 group-hover:text-secondary transition-colors">+91 9087223978</p>
                     </div>
-                  </div>
+                  </a>
+                  <a 
+                    href="https://www.linkedin.com/in/ameer-malik-bahad07"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center p-4 rounded-lg bg-blue-500/5 border border-blue-500/20 hover:bg-blue-500/10 hover:border-blue-500/40 transition-all duration-300 hover:shadow-soft group"
+                  >
+                    <div className="p-2 bg-blue-500/20 rounded-lg mr-3 group-hover:animate-glow">
+                      <Linkedin className="h-4 w-4 text-blue-500 glow-icon" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold">LinkedIn</p>
+                      <p className="text-xs text-foreground/80 group-hover:text-blue-400 transition-colors">www.linkedin.com/in/ameer-malik-bahad07</p>
+                    </div>
+                  </a>
+                  <a 
+                    href="https://github.com/ameer2907"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center p-4 rounded-lg bg-gray-500/5 border border-gray-500/20 hover:bg-gray-500/10 hover:border-gray-500/40 transition-all duration-300 hover:shadow-soft group"
+                  >
+                    <div className="p-2 bg-gray-500/20 rounded-lg mr-3 group-hover:animate-glow">
+                      <Github className="h-4 w-4 text-gray-400 glow-icon" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold">GitHub</p>
+                      <p className="text-xs text-foreground/80 group-hover:text-gray-300 transition-colors">github.com/ameer2907</p>
+                    </div>
+                  </a>
                 </div>
               </CardContent>
             </Card>

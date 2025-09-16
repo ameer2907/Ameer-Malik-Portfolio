@@ -12,16 +12,18 @@ const HeroSection = () => {
   return (
     <section 
       id="home" 
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
-      style={{
-        backgroundImage: `url(${techBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black"
     >
-      {/* Enhanced Overlay for tech aesthetic */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/85 to-background/95" />
+      {/* Tech circuit pattern overlay */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/20 via-transparent to-accent/20" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 border border-primary/30 rounded-full animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 border border-accent/30 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-primary/20 rounded-full animate-pulse" style={{ animationDelay: '2s' }} />
+      </div>
+      
+      {/* Enhanced gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-background/90 to-black/80" />
       
       {/* Floating tech elements with enhanced glow */}
       <div className="absolute top-20 left-10 w-32 h-32 bg-primary/20 rounded-full blur-xl animate-float animate-pulse-glow" />
@@ -57,24 +59,43 @@ const HeroSection = () => {
                 <Download className="mr-2 h-5 w-5" />
                 Download Resume
               </Button>
+              <Button 
+                variant="outline" 
+                size="xl" 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="border-accent/50 text-accent hover:bg-accent/10 hover:border-accent animate-glow"
+              >
+                <Mail className="mr-2 h-5 w-5 glow-icon" />
+                Get in Touch
+              </Button>
             </div>
             
           </div>
           
           {/* Enhanced Profile Image with tech glow */}
-          <div className="flex justify-center lg:justify-end animate-fade-in">
-            <div className="relative">
-              <div className="w-80 h-80 rounded-full overflow-hidden shadow-glow-intense border-4 border-primary/30 animate-intense-glow">
+          <div className="flex justify-center lg:justify-end animate-fade-in relative">
+            {/* Enhanced background patterns */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-96 h-96 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 rounded-full blur-3xl animate-pulse" />
+              <div className="absolute w-80 h-80 border border-primary/10 rounded-full animate-spin" style={{ animationDuration: '20s' }} />
+              <div className="absolute w-72 h-72 border border-accent/10 rounded-full animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }} />
+            </div>
+            
+            <div className="relative z-10">
+              <div className="w-80 h-80 rounded-full overflow-hidden shadow-glow-intense border-4 border-primary/30 animate-intense-glow relative">
                 <img
                   src={profilePhoto}
                   alt="K.Ameer Malik Bahad - AI & Data Science Engineer"
                   className="w-full h-full object-cover"
                 />
+                {/* Inner glow overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-accent/10 rounded-full" />
               </div>
               {/* Enhanced decorative rings with glow */}
               <div className="absolute inset-0 rounded-full border-2 border-accent/50 animate-pulse-glow" />
               <div className="absolute -inset-4 rounded-full border border-primary/30 animate-pulse-glow" style={{ animationDelay: '1s' }} />
               <div className="absolute -inset-8 rounded-full border border-accent/20 animate-pulse-glow" style={{ animationDelay: '2s' }} />
+              <div className="absolute -inset-12 rounded-full border border-primary/10 animate-pulse-glow" style={{ animationDelay: '3s' }} />
             </div>
           </div>
         </div>
