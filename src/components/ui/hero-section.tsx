@@ -6,25 +6,40 @@ import profilePhoto from '@/assets/profile-photo-new.jpg';
 import { useState, useEffect } from 'react';
 
 const HeroSection = () => {
-  const [displayedText, setDisplayedText] = useState('');
+  const [currentHighlight, setCurrentHighlight] = useState(0);
+  const [visibleHighlights, setVisibleHighlights] = useState<number[]>([]);
   
-  const fullText = "Passionate technologist dedicated to crafting innovative AI-driven solutions that bridge the gap between complex data and meaningful insights. Committed to excellence through continuous learning and strategic problem-solving in the evolving landscape of artificial intelligence.";
+  const highlights = [
+    "Crafting AI solutions with impact",
+    "Transforming data into intelligence", 
+    "Turning ideas into user-centered solutions",
+    "Building tech for a sustainable future",
+    "Blending technical skill with creative design",
+    "Learning, adapting, and innovating"
+  ];
   
   useEffect(() => {
-    const words = fullText.split(' ');
-    let currentIndex = 0;
-    
     const timer = setInterval(() => {
-      if (currentIndex < words.length) {
-        setDisplayedText(prev => prev + (prev ? ' ' : '') + words[currentIndex]);
-        currentIndex++;
-      } else {
-        clearInterval(timer);
-      }
-    }, 150); // Adjust speed here
+      setCurrentHighlight(prev => {
+        const next = (prev + 1) % highlights.length;
+        if (next === 0) {
+          // Reset when starting over
+          setVisibleHighlights([]);
+        }
+        
+        setVisibleHighlights(current => {
+          if (!current.includes(next)) {
+            return [...current, next];
+          }
+          return current;
+        });
+        
+        return next;
+      });
+    }, 2000); // 2 second intervals
     
     return () => clearInterval(timer);
-  }, []);
+  }, [highlights.length]);
 
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
@@ -77,12 +92,36 @@ const HeroSection = () => {
               </span>
             </h1>
             
-            {/* Animated intro text */}
+            {/* Animated highlight points */}
             <div className="text-center">
-              <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto min-h-[6rem] leading-relaxed">
-                <span className="animate-fade-in">{displayedText}</span>
-                <span className="inline-block w-0.5 h-6 bg-primary ml-1 animate-pulse"></span>
-              </p>
+              <div className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto min-h-[8rem] flex flex-col justify-center space-y-3">
+                {highlights.map((highlight, index) => (
+                  <div 
+                    key={index}
+                    className={`
+                      transition-all duration-1000 ease-out transform
+                      ${visibleHighlights.includes(index) 
+                        ? 'opacity-100 translate-y-0' 
+                        : 'opacity-0 translate-y-4'
+                      }
+                      ${currentHighlight === index 
+                        ? 'text-foreground shadow-glow-text animate-pulse-glow scale-105' 
+                        : visibleHighlights.includes(index)
+                          ? 'text-muted-foreground/70 scale-95'
+                          : ''
+                      }
+                      font-medium tracking-wide
+                    `}
+                    style={{
+                      textShadow: currentHighlight === index 
+                        ? '0 0 20px hsl(var(--primary) / 0.6), 0 0 40px hsl(var(--primary) / 0.4)' 
+                        : 'none'
+                    }}
+                  >
+                    {highlight}
+                  </div>
+                ))}
+              </div>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
