@@ -12,7 +12,7 @@ const HeroSection = () => {
   const highlights = [
     "Crafting AI solutions with impact",
     "Transforming data into intelligence", 
-    "Turning ideas into user-centered solutions",
+    "Engineering innovative tech solutions",
     "Building tech for a sustainable future",
     "Blending technical skill with creative design"
   ];
