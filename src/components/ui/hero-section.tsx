@@ -3,10 +3,45 @@ import { Badge } from '@/components/ui/badge';
 import { ChevronDown, Download, Mail, Github } from 'lucide-react';
 import techBg from '@/assets/tech-bg.jpg';
 import profilePhoto from '@/assets/profile-photo-new.jpg';
+import { useState, useEffect } from 'react';
 
 const HeroSection = () => {
+  const [displayedText, setDisplayedText] = useState('');
+  
+  const fullText = "Passionate technologist dedicated to crafting innovative AI-driven solutions that bridge the gap between complex data and meaningful insights. Committed to excellence through continuous learning and strategic problem-solving in the evolving landscape of artificial intelligence.";
+  
+  useEffect(() => {
+    const words = fullText.split(' ');
+    let currentIndex = 0;
+    
+    const timer = setInterval(() => {
+      if (currentIndex < words.length) {
+        setDisplayedText(prev => prev + (prev ? ' ' : '') + words[currentIndex]);
+        currentIndex++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 150); // Adjust speed here
+    
+    return () => clearInterval(timer);
+  }, []);
+
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToProjects = () => {
+    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const downloadResume = () => {
+    // Create a temporary link element to trigger download
+    const link = document.createElement('a');
+    link.href = '/K_Ameer_Malik_Resume.pdf'; // You'll need to add this file to public folder
+    link.download = 'K_Ameer_Malik_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -42,20 +77,20 @@ const HeroSection = () => {
               </span>
             </h1>
             
-            {/* Delayed intro popup */}
-            <div className="text-center animate-fade-in" style={{ animationDelay: '2s' }}>
-              <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Passionate technologist dedicated to crafting innovative AI-driven solutions that bridge the gap between complex data and meaningful insights. 
-                Committed to excellence through continuous learning and strategic problem-solving in the evolving landscape of artificial intelligence.
+            {/* Animated intro text */}
+            <div className="text-center">
+              <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto min-h-[6rem] leading-relaxed">
+                <span className="animate-fade-in">{displayedText}</span>
+                <span className="inline-block w-0.5 h-6 bg-primary ml-1 animate-pulse"></span>
               </p>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-              <Button variant="glow" size="xl" className="animate-intense-glow">
+              <Button variant="glow" size="xl" className="animate-intense-glow" onClick={scrollToProjects}>
                 <Github className="mr-2 h-5 w-5 glow-icon" />
                 View Projects
               </Button>
-              <Button variant="outline" size="xl">
+              <Button variant="outline" size="xl" onClick={downloadResume}>
                 <Download className="mr-2 h-5 w-5" />
                 Download Resume
               </Button>

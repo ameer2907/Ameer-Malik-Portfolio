@@ -13,7 +13,6 @@ const AboutSection = () => {
   const languages = [
     { name: 'English', level: 'Fluent' },
     { name: 'Tamil', level: 'Native' },
-    { name: 'French', level: 'Conversational' },
   ];
 
   return (
