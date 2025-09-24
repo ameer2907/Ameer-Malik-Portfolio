@@ -7,36 +7,25 @@ import { useState, useEffect } from 'react';
 
 const HeroSection = () => {
   const [currentHighlight, setCurrentHighlight] = useState(0);
-  const [visibleHighlights, setVisibleHighlights] = useState<number[]>([]);
+  const [isVisible, setIsVisible] = useState(true);
   
   const highlights = [
     "Crafting AI solutions with impact",
     "Transforming data into intelligence", 
     "Turning ideas into user-centered solutions",
     "Building tech for a sustainable future",
-    "Blending technical skill with creative design",
-    "Learning, adapting, and innovating"
+    "Blending technical skill with creative design"
   ];
   
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentHighlight(prev => {
-        const next = (prev + 1) % highlights.length;
-        if (next === 0) {
-          // Reset when starting over
-          setVisibleHighlights([]);
-        }
-        
-        setVisibleHighlights(current => {
-          if (!current.includes(next)) {
-            return [...current, next];
-          }
-          return current;
-        });
-        
-        return next;
-      });
-    }, 2000); // 2 second intervals
+      setIsVisible(false);
+      
+      setTimeout(() => {
+        setCurrentHighlight(prev => (prev + 1) % highlights.length);
+        setIsVisible(true);
+      }, 500); // Half second fade out before switching
+    }, 3000); // Show each highlight for 3 seconds
     
     return () => clearInterval(timer);
   }, [highlights.length]);
@@ -85,51 +74,59 @@ const HeroSection = () => {
           {/* Content */}
           <div className="text-center lg:text-left animate-slide-up">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 font-space">
-              <span className="block text-foreground">Hello, I'm</span>
-              <span className="block gradient-text">K.Ameer Malik</span>
-              <span className="block text-2xl sm:text-3xl lg:text-4xl text-muted-foreground mt-2 mb-8">
+              <span className="block text-foreground animate-slide-up">Hello, I'm</span>
+              <span className="block gradient-text animate-scale-in" style={{ animationDelay: '0.3s' }}>Ameer Malik</span>
+              <span className="block text-2xl sm:text-3xl lg:text-4xl text-muted-foreground mt-2 mb-8 animate-fade-in" style={{ animationDelay: '0.6s' }}>
                 Final-Year CSE Student, AI & Data Science Specialization
               </span>
             </h1>
             
-            {/* Animated highlight points */}
+            {/* Enhanced single highlight animation */}
             <div className="text-center">
-              <div className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto min-h-[8rem] flex flex-col justify-center space-y-3">
-                {highlights.map((highlight, index) => (
-                  <div 
-                    key={index}
-                    className={`
-                      transition-all duration-1000 ease-out transform
-                      ${visibleHighlights.includes(index) 
-                        ? 'opacity-100 translate-y-0' 
-                        : 'opacity-0 translate-y-4'
-                      }
-                      ${currentHighlight === index 
-                        ? 'text-foreground shadow-glow-text animate-pulse-glow scale-105' 
-                        : visibleHighlights.includes(index)
-                          ? 'text-muted-foreground/70 scale-95'
-                          : ''
-                      }
-                      font-medium tracking-wide
-                    `}
-                    style={{
-                      textShadow: currentHighlight === index 
-                        ? '0 0 20px hsl(var(--primary) / 0.6), 0 0 40px hsl(var(--primary) / 0.4)' 
-                        : 'none'
-                    }}
-                  >
-                    {highlight}
-                  </div>
-                ))}
+              <div className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto min-h-[4rem] flex items-center justify-center">
+                <div 
+                  className={`
+                    transition-all duration-700 ease-out transform
+                    ${isVisible 
+                      ? 'opacity-100 translate-y-0 scale-100' 
+                      : 'opacity-0 translate-y-6 scale-95'
+                    }
+                    font-medium tracking-wide text-center
+                    shadow-glow-text animate-pulse-glow
+                    px-6 py-3 rounded-lg
+                    bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10
+                    border border-primary/20
+                  `}
+                  style={{
+                    textShadow: isVisible 
+                      ? '0 0 25px hsl(var(--primary) / 0.8), 0 0 50px hsl(var(--primary) / 0.6), 0 0 75px hsl(var(--accent) / 0.4)' 
+                      : 'none',
+                    boxShadow: isVisible
+                      ? '0 0 30px hsl(var(--primary) / 0.3), 0 0 60px hsl(var(--accent) / 0.2), inset 0 0 20px hsl(var(--primary) / 0.1)'
+                      : 'none'
+                  }}
+                >
+                  {highlights[currentHighlight]}
+                </div>
               </div>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-              <Button variant="glow" size="xl" className="animate-intense-glow" onClick={scrollToProjects}>
+              <Button 
+                variant="glow" 
+                size="xl" 
+                className="animate-intense-glow hover:scale-105 transition-all duration-300" 
+                onClick={scrollToProjects}
+              >
                 <Github className="mr-2 h-5 w-5 glow-icon" />
                 View Projects
               </Button>
-              <Button variant="outline" size="xl" onClick={downloadResume}>
+              <Button 
+                variant="outline" 
+                size="xl" 
+                onClick={downloadResume}
+                className="hover:scale-105 transition-all duration-300 hover:shadow-glow"
+              >
                 <Download className="mr-2 h-5 w-5" />
                 Download Resume
               </Button>
@@ -137,7 +134,7 @@ const HeroSection = () => {
                 variant="outline" 
                 size="xl" 
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border-accent/50 text-accent hover:bg-accent/10 hover:border-accent animate-glow"
+                className="border-accent/50 text-accent hover:bg-accent/10 hover:border-accent animate-glow hover:scale-105 transition-all duration-300"
               >
                 <Mail className="mr-2 h-5 w-5 glow-icon" />
                 Get in Touch
