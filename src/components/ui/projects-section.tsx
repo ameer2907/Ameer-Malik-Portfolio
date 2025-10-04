@@ -13,12 +13,31 @@ import {
   Navigation,
   Recycle,
   Monitor,
-  Globe
+  Globe,
+  Brain
 } from 'lucide-react';
 import aiPattern from '@/assets/ai-pattern.jpg';
 
 const ProjectsSection = () => {
   const projects = [
+    {
+      title: 'AI Tutor Website - Intelligent Adaptive Learning Platform',
+      description: 'An AI-powered educational platform delivering personalized, interactive tutoring experiences using NLP and ML. Features context-aware explanations, adaptive learning paths, progress tracking, and intelligent content recommendations for enhanced learning outcomes.',
+      icon: Brain,
+      status: 'Active',
+      featured: true,
+      technologies: ['React.js', 'Python', 'NLP', 'Machine Learning', 'Node.js', 'AI Models', 'Speech Recognition'],
+      features: [
+        'Natural language Q&A with context awareness',
+        'Personalized adaptive learning paths',
+        'Interactive quizzes with instant feedback',
+        'Progress tracking and analytics dashboard',
+        'Multilingual support and gamification'
+      ],
+      github: '#',
+      demo: '#',
+      image: 'gradient-from-purple-500 to-pink-600'
+    },
     {
       title: 'Advanced Traffic Management System using IoT with Real Time Monitoring Dashboard',
       description: 'Intelligent traffic control system utilizing IoT sensors and machine learning algorithms to optimize traffic flow, reduce congestion, and provide real-time monitoring through an interactive dashboard for urban traffic management.',
@@ -145,7 +164,7 @@ const ProjectsSection = () => {
                   <div className="absolute top-4 right-4">
                     <Badge 
                       variant={project.status === 'Completed' ? 'default' : 'secondary'}
-                      className="bg-white/20 backdrop-blur-sm"
+                      className={`backdrop-blur-sm ${project.status === 'Active' ? 'bg-green-500/90 text-white animate-pulse-glow shadow-glow border-green-400/50' : 'bg-white/20'}`}
                     >
                       {project.status}
                     </Badge>
